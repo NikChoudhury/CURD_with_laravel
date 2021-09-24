@@ -11,6 +11,10 @@
                 <br>
                 <input type="text" name="name" value="{{$todoArr->name}}" class="form-control" autofocus="autofocus" onfocus="this.setSelectionRange(this.value.length,this.value.length)">
                 <br>
+                @if($errors->has('name'))
+                  <span class="error">{{ $errors->first('name') }}</span>
+                  <br>
+                @endif
                 <input type="submit" name="submit" value="Edit Task" class="btn badge-success">
             </form>
           </div>
