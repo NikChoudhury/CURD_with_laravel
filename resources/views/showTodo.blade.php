@@ -4,7 +4,7 @@
     @parent
     <div class="container"> 
     <div class='wrapper'>
-        <h1>Your Todo</h1>
+        <h1>Your Tasks</h1>
         <h3><a href="add">Add New</a></h3>
         @if(session('msg'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -30,7 +30,7 @@
                         <tr>
                             <td>{{$todo->id}}</td>
                             <td>{{$todo->name}}</td>
-                            <td>{{$todo->created_at}}</td>
+                            <td>{{get_formatted_date($todo->created_at)}}</td>
                             <td>
                                 <a href="delete/{{$todo->id}}">Delete</a>
                                 <a href="edit/{{$todo->id}}">Edit</a>

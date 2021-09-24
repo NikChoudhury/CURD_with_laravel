@@ -38,7 +38,9 @@
         justify-content:center;
         align-items:center;
         }
-
+        .error{
+            color: red;
+        }
     </style>
 </head>
 <body>
