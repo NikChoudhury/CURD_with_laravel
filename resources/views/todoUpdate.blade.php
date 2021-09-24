@@ -1,34 +1,18 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Add New</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
+@extends('layout')
+@section("title","Edit Todo")
+@section('container')
         <div class="container">
           <div class='wrapper'>
             <h1>Your Todo</h1>
             <h3><a href="/your-todo">Back</a></h3>
             <form action="/todo_update/{{$todoArr->id}}" method="post">
                 @csrf
-                <label for="">Name</label>
+                <label for="" class="form-group">Name</label>
                 <br>
-                <input type="text" name="name" value="{{$todoArr->name}}">
+                <input type="text" name="name" value="{{$todoArr->name}}" class="form-control" autofocus="autofocus" onfocus="this.setSelectionRange(this.value.length,this.value.length)">
                 <br>
-                <input type="submit" name="Submit">
+                <input type="submit" name="submit" value="Edit Task" class="btn badge-success">
             </form>
           </div>
         </div>
-    </body>
-</html>
+@endsection
